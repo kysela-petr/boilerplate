@@ -1,0 +1,8 @@
+node_modules/*
+bower_components/*
+src/*
+dist/*
+.DS_Store
+
+!.gitignore
+nbproject/*
