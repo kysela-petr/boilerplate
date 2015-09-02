@@ -70,6 +70,14 @@ module.exports = function(grunt) {
         src: projectFiles.scripts
       }
     },
+    jsdoc: {
+      dist: {
+        src: ['src/js/README.md'].concat(projectFiles.scripts),
+        options: {
+          destination: 'dist/scriptguide'
+        }
+      }
+    },
     copy: {
       ltIe9: {
         src: 'bower_components/lt-ie-9/lt-ie-9.min.js',
@@ -180,7 +188,7 @@ module.exports = function(grunt) {
 
   // Default task.
   grunt.registerTask('styles', ['clean:styles', 'less', 'remfallback', 'autoprefixer', 'concat:styles', 'kss']);
-  grunt.registerTask('scripts', ['clean:scripts', 'jshint:beforeconcat', 'concat:scripts']);
+  grunt.registerTask('scripts', ['clean:scripts', 'jshint:beforeconcat', 'concat:scripts', 'jsdoc']);
   grunt.registerTask('default', ['copy', 'styles', 'uglify:modernizr', 'scripts', 'watch']);
   grunt.registerTask('dist', ['copy', 'styles', 'cssmin', 'uglify:modernizr', 'scripts', 'uglify:dist']);
 

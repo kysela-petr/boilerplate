@@ -29,24 +29,44 @@ else
 ==========" >> src/style/styleguide.md
 fi
 
+# prepare readme file for JSDoc styleguide
+if [ -f src/js/README.md ] 
+then
+	echo "scriptguide readme exists"
+else
+	touch src/js/README.md
+	echo "ScriptGuide
+==========" >> src/js/README.md
+fi
+
 # prepare main script file
 if [ -f src/js/main.js ]
 then
 	echo "main script file exists"
 else
 	touch src/js/main.js
-	echo "(function(){
+	echo "/**
+ * @copyright Petr Kysela 2015
+ * @author Petr Kysela <petr@kysela.biz>
+ * @license MIT
+ */	
+(function(window){
 	
 	'use strict';
 
-	var dump = function(message) {
+	/**
+	 * Shortcut for console.log
+	 * @param value - a value to log
+	 * @global
+	 */
+	window.dump = function(message) {
 		/*jshint devel:true */
 		console.log(message);
 	};
 
-	dump('Works!');
+	window.dump('Works!');
 
-})();" > src/js/main.js
+})(window);" > src/js/main.js
 fi	
 
 # prepare main less style file
@@ -82,5 +102,12 @@ echo "|                                          |"
 bower install
 
 echo "+------------------------------------------+"
-echo "|  DONE! Now you can run 'grunt' command   |"
+echo "|               grunt dist                 |"
+echo "|                                          |"
+
+grunt dist
+
+echo "+------------------------------------------+"
+echo "| DONE! Now you can run 'grunt' command    |"
+echo "| and work, it starts watch task for you.  |"
 echo "|------------------------------------------|"
