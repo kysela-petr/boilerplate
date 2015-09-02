@@ -1,0 +1,33 @@
+    /* TEAM */
+        
+        Project manager: 
+        Site:  
+        Twitter: @
+        Location: , Czech Republic
+
+        Programmer: 
+        Site: 
+        Twitter: 
+        Location: 
+
+        UI developer: 
+        Site:  
+        Twitter: 
+        Location: 
+	
+        Web designer:
+    	Site: 
+        Twitter:
+        Location:
+
+
+
+    /* THANKS */
+
+        Site: www.esports.cz
+
+
+
+    /* SITE */
+
+        First release: 2015-
